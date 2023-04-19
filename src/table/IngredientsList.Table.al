@@ -32,7 +32,7 @@ table 50103 IngredientsList
             Caption = 'Picture';
             DataClassification = ToBeClassified;
         }
-        
+
     }
     keys
     {

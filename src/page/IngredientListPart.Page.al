@@ -1,5 +1,6 @@
 page 50100 "IngredientListPart"
 {
+    AutoSplitKey = true;
     ApplicationArea = All;
     Caption = 'Ingredient Lines';
     PageType = ListPart;
@@ -32,6 +33,11 @@ page 50100 "IngredientListPart"
                 field("Qty. Needed"; Rec."Qty. Needed")
                 {
                     ToolTip = 'Specifies the value of the Qty. Needed field.';
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update();
+                    end;
                 }
                 field("Unit of Measure"; Rec."Unit of Measure")
                 {
@@ -48,9 +54,10 @@ page 50100 "IngredientListPart"
             }
         }
     }
-    trigger OnNewRecord(BelowxRec: Boolean)
+
+    trigger OnDeleteRecord(): Boolean
     begin
-        Rec."Line No." := xRec."Line No." + 1000;
+        CurrPage.Update();
     end;
 
 }

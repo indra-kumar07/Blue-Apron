@@ -79,21 +79,6 @@ table 50101 "Ingredients"
             Caption = 'Total Calories';
             DataClassification = CustomerContent;
             Editable = false;
-            trigger OnValidate()
-            var
-                MenuInformation: Record MenuInformation;
-                Ingredients: Record Ingredients;
-            begin
-                if not Ingredients.Get(Rec."Item No", Rec."Line No.") then
-                    Rec.Insert();
-                Rec.Modify();
-                MenuInformation.Get("Item No");
-                Ingredients.SetLoadFields("Total Calories");
-                Ingredients.SetRange("Item No", Rec."Item No");
-                Ingredients.CalcSums("Total Calories");
-                MenuInformation.Calories := Ingredients."Total Calories";
-                MenuInformation.Modify();
-            end;
         }
     }
     keys

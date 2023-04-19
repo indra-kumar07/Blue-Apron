@@ -37,4 +37,15 @@ page 50101 "MenuInformationList"
             }
         }
     }
+    // views
+    // {
+    //     view("Gt 1")
+    //     {
+    //         Filters = where("No of Servings" = filter('>1'));
+    //     }
+    // }
+    // trigger OnOpenPage()
+    // begin
+    //     Rec.SetFilter("No of Servings",'>%1',1);
+    // end;
 }

@@ -29,10 +29,9 @@ table 50100 "MenuInformation"
         field(5; "Calories"; Decimal)
         {
             Caption = 'Calories';
-            DataClassification = CustomerContent;
             Editable = false;
-            // FieldClass = FlowField;
-            // CalcFormula = sum(Ingredients."Total Calories" where("Item No" = field("No.")));
+            FieldClass = FlowField;
+            CalcFormula = sum(Ingredients."Total Calories" where("Item No" = field("No.")));
         }
         field(6; "No of Servings"; Integer)
         {

@@ -32,7 +32,7 @@ table 50102 "PreparationInformation"
             Caption = 'Description';
             DataClassification = CustomerContent;
         }
-        
+
     }
     keys
     {

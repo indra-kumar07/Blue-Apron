@@ -54,16 +54,16 @@ page 50102 "MenuInformationCard"
             {
                 SubPageLink = "No." = field("No.");
             }
-            part(IngredientImage;IngredientsCardPart)
+            part(IngredientImage; IngredientsCardPart)
             {
                 Provider = "Ingredient Lines";
                 SubPageLink = "No." = field("Ingredient No.");
             }
-            part(PreperationImage;PrepCardPart)
+            part(PreperationImage; PrepCardPart)
             {
                 Provider = "Preperation Lines";
-                SubPageLink = "Line No." = field("Line No.");
-            } 
+                SubPageLink = "Line No." = field("Line No."), "Item No" = field("Item No");
+            }
         }
     }
     actions
@@ -78,14 +78,14 @@ page 50102 "MenuInformationCard"
                 var
                     MenuInformation: Record MenuInformation;
                 begin
-                    MenuInformation.SetRange("No.",Rec."No.");
+                    MenuInformation.SetRange("No.", Rec."No.");
                     Report.RunModal(Report::"Blue Apron Report", true, true, MenuInformation);
                 end;
             }
         }
         area(Promoted)
         {
-            actionref(p_print;"Print Menu"){}
+            actionref(p_print; "Print Menu") { }
         }
     }
 }
