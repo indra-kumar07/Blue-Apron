@@ -10,7 +10,7 @@ page 50100 "IngredientListPart"
     {
         area(content)
         {
-            repeater(General)
+            repeater(General3)
             {
                 field("Line No."; Rec."Line No.")
                 {
